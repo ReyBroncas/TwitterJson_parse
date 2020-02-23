@@ -1,6 +1,6 @@
 ### Getting started
 '''
-python3 twitter.py
+$ python3 twitter.py
 Enter a search query: python
 '''
 ### Example output
@@ -8,9 +8,9 @@ Enter a search query: python
 ─> RT @realpython: 🐍📺 The VS Code Python Extension [Video]
 #python https://t.co/wmzKYTg8hX
 
-├── [0|str] ──── created_at
-├── [1|int] ──── id
-├── [2|str] ──── id_str
+├── [0|str] ──── created_at\n
+├── [1|int] ──── id\n
+├── [2|str] ──── id_str\n
 ├── [3|str] ──── text
 ├── [4|bool] ──── truncated
 ├── [5|dict] ──── entities
