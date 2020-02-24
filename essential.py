@@ -23,6 +23,7 @@ def search_tweet(q, api_reference):
 
 def json_navigate(obj_elm):
     while True:
+        output_list = []
         if isinstance(obj_elm, (list, dict, tuple)):
             if isinstance(obj_elm, (list, tuple)):
                 ind_l = list(range(len(obj_elm)))
@@ -36,9 +37,12 @@ def json_navigate(obj_elm):
             return
         for i, each in enumerate(obj_elm):
             if not isinstance(each, (list, tuple, dict)):
-                print(f'├── [{i}|{obj_elm[ind_l[i]].__class__.__name__}] ──── {each}')
+                output_list.append((f'├── [{i}|{obj_elm[ind_l[i]].__class__.__name__}] ──── {each}', 1))
             else:
-                print(f'├── [{i}|{obj_elm[ind_l[i]].__class__.__name__}] ──── /.')
+                output_list.append((f'├── [{i}|{obj_elm[ind_l[i]].__class__.__name__}]/', 0))
+        output_list.sort(key=lambda x: x[-1])
+        for elm in output_list:
+            print(elm[0])
         value = input('\nEnter an index of element or press "h" to move back: ')
         os.system('cls' if os.name == 'nt' else 'clear')
         if value == 'h':
