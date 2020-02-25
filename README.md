@@ -2,7 +2,7 @@
 
 A simple python module to view .json files.
 
-Module searches tweets using Twitter API by default, however you can view your own .json file. In order to
+Module reads Twitter API tweets reference by default, however you can view your own .json file. In order to
 do this put your file in cache/ and when program asks a query, type the name of your .json file.
 
 ### Run Examples
