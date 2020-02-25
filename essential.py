@@ -37,18 +37,21 @@ def json_navigate(obj_elm):
             return
         for i, each in enumerate(obj_elm):
             if not isinstance(each, (list, tuple, dict)):
-                output_list.append((f'├── [{i}|{obj_elm[ind_l[i]].__class__.__name__}] ──── {each}', 1))
+                output_list.append(
+                    (f'├── [{i}|{obj_elm[ind_l[i]].__class__.__name__}] ──── {each}', 1))
             else:
-                output_list.append((f'├── [{i}|{obj_elm[ind_l[i]].__class__.__name__}]/', 0))
+                output_list.append(
+                    (f'├── [{i}|{obj_elm[ind_l[i]].__class__.__name__}]/', 0))
         output_list.sort(key=lambda x: x[-1])
         for elm in output_list:
             print(elm[0])
-        value = input('\nEnter an index of element or press "h" to move back: ')
+        value = input(
+            '\nEnter an number of element or press any other key to move back: ')
         os.system('cls' if os.name == 'nt' else 'clear')
-        if value == 'h':
-            return
-        else:
+        if len(value) == 1 and value.isnumeric:
             value = int(value)
+        else:
+            return
         json_navigate(obj_elm[ind_l[value]])
 
 
