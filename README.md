@@ -1,11 +1,11 @@
-# TwitterJson parsere
+# Json parser
 
 A simple python module to view .json files.
 
-### Run Examples
-
 Module searches tweets using Twitter API by default, however you can view your own .json file. In order to
 do this put your file in cache/ and when program asks a query, type the name of your .json file.
+
+### Run Examples
 
 ```sh
 $ python3 main.py
@@ -37,8 +37,3 @@ Enter a search query: python
 ├── [24|bool] ──── possibly_sensitive
 ├── [25|str] ──── lang
 ```
-
-### Run Examples
-***
-![Result:]()
-***
